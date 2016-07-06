@@ -3,11 +3,13 @@
 	include './config.php';
 
 	$res = new Model('user');
-/*	echo "<pre>";
+	echo "<pre>";
 	// print_r($res->select());
-	print_r($res->field(array('id', 'username', 'fullname'))->limit(3)->select());
+	// print_r($res->field(array('id', 'username', 'fullname'))->limit(3)->select());
+	print_r($res->field(array('id', 'username', 'fullname'))->select());
+	// $res->getFields();
 	echo "</pre>";
-*/
+
 	// 添加一条数据
 	// $data['username'] = "zhu li 5";
 	// $data['password'] = md5("123456");
@@ -19,11 +21,11 @@
 	// 删除一条数据
 	// echo $res->delete(82);
 
-	// 更新一条数据
+/*	// 更新一条数据
 	$id = 85;
 	$data = $res->field(array('username', 'fullname'))->find($id);
 	$data['username'] = 'lulu2';
-	echo $res->update($id, $data);
+	echo $res->update($id, $data);*/
 
 	/*
 	面向对象编程思维的访问轨迹：
