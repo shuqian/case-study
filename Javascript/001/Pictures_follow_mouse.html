@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pictures follow the mouse</title>
+	<style type="text/css">
+		#img{position: absolute; left: 0; top: 0; border:1px solid #ccc;}
+	</style>
+</head>
+<body>
+	<img src="./123.jpg" alt="" id="img" width="200">
+	<div>X:<span id="xitem">横坐标</span> / Y:<span id="yitem">纵坐标</span></div>
+	<script>
+		var img = document.getElementById('img');
+		var x = document.getElementById('xitem');
+		var y = document.getElementById('yitem');
+
+		
+		document.onmousemove = function(e)
+		{
+			img.style.left = e.clientX + 'px';
+			img.style.top = e.clientY + 'px';
+			
+			x.innerHTML = e.clientX;
+			y.innerHTML = e.clientY;
+		}
+
+
+	</script>
+</body>
+</html>
