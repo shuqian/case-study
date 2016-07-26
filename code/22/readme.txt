@@ -1,0 +1,11 @@
+pdo_getAttribute.php	使用PDO获取属性，演示连接和getAttribute()方法的应用
+pdo_exec.php		使用PDO中的exec()执行SQL语句
+pdo_query.php		使用PDO中的query()方法执行SQL语句
+pdo_propare.php		使用PDO中的prepare()方法准备好一个SQL语句,并绑定参数
+pdo_execute.php		使用execute()方法执行准备好的SQL语句
+fetch.php		使用fetch()逐条打印数据
+fetchAll.php		使用fetchAll()获取多条数据数
+bindColumn.php		使用bindColumn()方法绑定参数
+insert_lob.php		二进制数据的插入
+select_lob.php		二进制数据的读取
+transaction.php		使用PDO演示事务处理

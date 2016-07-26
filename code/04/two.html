@@ -1,0 +1,27 @@
+<style>
+	body{ margin: 0; padding: 0; text-align: center; }          
+	#container { width:966px; margin:0 auto; text-align:left; }
+	#left_main {                      	/* 设置左部导航区块的CSS布局样式        		*/
+		float:left;                 	/* 设置该区块框向左浮动，脱离文档流      		*/
+		width:256px;               	/* 设定该区块框的宽度为256个像素         		*/
+		height:400px;               	/* 设定该区块框的高度为400个像素，临时设置	*/
+		border:1px solid;            	/* 设定该区块框的边框为1px的直线边框       	*/
+	}
+	#right_content {
+		float:right;                	/* 设置该区块框向右浮动，脱离文档流          	*/
+		width:700px;               	/* 设定该区块框的宽度为700个像素            	*/
+		height:400px;               	/* 设定该区块框的高度为400个像素，临时设置 	*/
+		border:1px solid;            	/* 设定该区块框的边框为1px的直线边框       	*/
+	}
+</style>
+<body>                             	<!-- 使用CSS清除主体标记默认的边距，设置文本居中 -->
+	<div id="container">              	<!-- 定义网页最外层的容器使用CSS设置居中显示    -->
+		<div id="left_main">        	<!-- 设置左部主导航的区块框 -->
+			主导航区块
+		</div>
+		<div id="right_content">     	<!-- 设置右部内容的区块框 -->
+			内容区块
+		</div>	
+	</div>	                     	<!-- 外层容器结束标记 -->
+</body>	
+

@@ -1,0 +1,35 @@
+<!doctype html>
+<style>
+    /*选中div中第一个元素，且元素类型为p标签，设定字体颜色*/
+    p:first-child{COLOR:RED}
+    
+    /*选中div元素中最后一个元素，且元素类型为p标签*/
+    p:last-child{color:green}
+    
+    /*选中div元素中指定的元素 且元素类型为P标签*/
+    p:nth-child(4){color:purple}
+    
+    /*P:nth-child(2n){background:pink}*/
+    /*P:nth-child(3n+1){background:green}*/
+    
+    /*p:nth-child(even){background:purple}*/
+    /*p:nth-child(odd){background:pink}*/
+    
+    /*选中div中的唯一的一个元素，且该元素必须为p标签*/
+    p:only-child{background:red}
+</style>
+<div>
+    <p>选中div中第一个元素，且元素类型为p标签，设定字体颜色</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中指定的元素 且元素类型为P标签</p>
+    <p>选中div元素中最后一个元素，且元素类型为p标签</p>
+</div>
+
+<div>
+    <p>选中div中的唯一的一个元素，且该元素必须为p标签</p>
+</div>
