@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+
+</body>
+    <script>
+        /*
+            事件属性
+                鼠标
+                    e.clientX
+                    e.clientY
+                    button
+
+                键盘
+                    keyCode
+                    altKey
+                    shiftkey
+                    ctrlkey
+
+
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave     移出（在子元素上不会触发）
+                onmouseenter     移入（在子元素上不会触发）
+
+            其他事件
+                oncontextmenu
+                onresize
+                onscroll
+
+            键盘事件
+                onkeydown
+                onkeyup
+                onkeypress
+
+         */
+        //连续触发事件
+        //如果要获取键盘的键盘码，这个对象必须写在onkeydown
+        window.onkeydown = function(e)
+        {
+            var e = e || event;
+            if (e.keyCode == 68) {
+                if (e.shiftKey) {
+                    alert('按下了D');
+                }
+            }
+            // alert(e.keyCode);
+            // console.log('按下');
+        }
+
+        window.onkeyup = function()
+        {
+            console.log('弹起');
+        }
+
+        //连续触发事件
+        // window.onkeypress = function(e)
+        // {
+        //     console.log('按下了一次');
+        //     var e = e || event;
+        //     alert(e.keyCode);
+        // }
+
+    </script>
+</html>

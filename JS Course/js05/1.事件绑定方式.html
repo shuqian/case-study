@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="test();">点击</button>
+</body>
+    <script>
+        /*
+            事件 -- 类似php中的魔术方法
+
+            1.如何绑定事件？
+
+            2.如何获取事件的属性
+
+            3.一共有哪些事件？
+
+         */
+
+        //事件绑定方式1：
+        function test()
+        {
+            alert(1);
+        }
+
+
+        //事件绑定方式2：
+        var btn = document.getElementById('btn');
+        btn.onclick = function()
+        {
+            alert(2);
+        }
+
+        document.title = 'hello';
+
+    </script>
+</html>

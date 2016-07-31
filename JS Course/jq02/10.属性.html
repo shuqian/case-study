@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <b>hello</b>
+        <i>moning</i>
+        aaaa
+        bbbb
+    </div>
+
+    <input type="text" value="3">
+</body>
+    <script>
+        //相当于使用setAttribute()来设置属性    在页面可见
+        $('div').attr('info','hello');
+        // alert($('div').attr('info'));
+        var a = $('div').removeAttr('info');
+        // alert($('div').attr('info'));
+
+        //相当于使用 box.title 设置元素本身就有的属性才会在页面显示
+        // $('div').prop('title','hello');
+        // alert($('div').prop('info'));
+
+        //html()  设置innerHTML的值
+        // $('div').html('hello');
+
+        //获取文本框中的值
+        // alert($('input').val());
+
+
+        //text
+        alert($('div').text());
+    </script>
+</html>

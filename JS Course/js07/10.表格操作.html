@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table id="mytab" width="500" border="1"></table>
+</body>
+    <script>
+        //表格操作
+        var mytab = document.getElementById('mytab');
+
+        //动态往表格里插入一行
+        var row = mytab.insertRow();
+
+        //动态往表格里插入列
+        row.insertCell().innerHTML = '测试';
+        row.insertCell().innerHTML = '测试';
+        row.insertCell().innerHTML = '测试';
+        var cell = row.insertCell();
+        // alert(cell);
+
+        //删除列
+        row.deleteCell(cell.cellIndex);
+    </script>
+</html>

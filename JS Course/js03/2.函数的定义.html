@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        //函数   一种数据类型
+        // test();
+        //函数的定义1
+        function test()
+        {
+            alert(1);
+        }
+
+        //函数就像字符串一样，重新定义，会覆盖同名的函数
+        function test()
+        {
+            alert(2);
+        }
+
+        // var str = 'I Love You';
+        // var str = 'hi';
+        // alert(str);
+
+
+        //函数定义2
+        function test()
+        {
+            alert(3);
+            return 10;
+        }
+        // var func = function(){alert(3)}
+        // 把函数的返回值赋给一个变量
+        // var func = test();
+        var func = test;
+        // alert(func);
+        // alert(func)
+        // func();
+
+        //函数定义3：使用构造器
+        //前面所有的参数都是作为函数的形参，最后一个参数是函数体的内容
+        var say = new Function('a','b','return a+b');
+        // alert(say);
+        var res = say(5,6);
+
+        alert(res);
+
+
+        // var str = new String('hello');
+        // var str1 = 'hello1';
+        // alert(typeof str);
+        // alert(typeof str1);
+
+    </script>
+    <script>
+        //定义函数的时候，如果调用跟定义不在同一个script标签里，那么必须先定义，后调用
+        // test();
+    </script>
+</html>

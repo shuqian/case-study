@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick='stop();'>哥不想等了</button>
+</body>
+<script>
+    //定时器
+    //一次性的
+    //setTimeout()
+    //第一个参数是一个回调函数
+    //第二个参数时间  单位毫秒
+    /*
+    setTimeout('test()',3000);
+
+    function test()
+    {
+        alert(1);
+    }
+    */
+
+    timmer = setTimeout(function(){
+        alert('大爷来了');
+    },5000);
+
+    // clearTimeout(timmer);
+    //周期性
+    //setInterval()
+    timmer1 = setInterval(function(){
+        console.log(1);
+        // document.write(111);
+    },1000);
+
+    function stop()
+    {
+        //清除闹钟
+        clearTimeout(timmer);
+        clearInterval(timmer1);
+    }
+</script>
+</html>

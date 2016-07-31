@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>###############</li>
+        <li class="red">###############red</li>
+        <li>###############</li>
+        <li class="test">###############test</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li class="red">###############red</li>
+        <b>########</b>
+    </ul>
+
+    <div info="die">
+        <p>
+            <div info="son">
+                <div info="sun">
+                    <i id="des">我爱你</i>
+                </div>
+            </div>
+        </p>
+    </div>
+
+</body>
+<script>
+    // var lis = $('ul').children().get();
+    // console.dir(lis);
+    //找下一个同级的兄弟，每次是跳一级
+    // $("#test").next().next().next().css('color','red');
+    //找下面所有的同级兄弟
+    // $("#test").nextAll().css('color','red');
+    // $("#test").nextUntil('.red').css('color','red');
+
+    //prev()   prevall()   prevUntil()
+
+    //parent()  parents()   parentsUntil()
+    // var obj = $('#des').parent();
+    // var obj = $('#des').parents().get();
+    // var obj = $('#des').parentsUntil('div').get();
+    // console.dir(obj);
+
+    //find()
+    //当前集合中符合条件
+    // $('ul li').filter('.test').css('color','red');
+    //符合条件的所有后代
+    // $('ul').find('li').css('color','red');
+
+    //siblings()  找到所有的兄弟（除了自己）
+    $('.test').siblings().css('color','red');
+
+    //closest()   找离自己最近的祖宗
+    var a = $('#des').closest('div').attr('info');
+    alert(a);
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        //ajax
+        //1.创建对象
+        if (window.XMLHttpRequest) {
+            var ajax = new XMLHttpRequest;
+        } else {
+            var ajax = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //2.建立联系
+        ajax.open('get','./ajax.php',true);
+
+        //3.确认发送
+        ajax.send();
+
+        //4.判断
+        ajax.onreadystatechange = function()
+        {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                var res = ajax.responseText;
+
+                //方式1：
+                // var obj = eval('(' + res + ')');
+
+                //方式2：有兼容性问题（IE5、IE6）
+                var obj = JSON.parse(res);
+
+            }
+        }
+    </script>
+</html>

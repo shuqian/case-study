@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:300px;
+            height:300px;
+            position:absolute;
+            left:430px;
+            top:20px;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <img id="img" src="./1.jpg" width="400px">
+    <div id="box"><img src="./1.jpg" alt=""></div>
+</body>
+    <script>
+        var box = document.getElementById('box');
+        var img = document.getElementById('img');
+
+        img.onmousemove = function(e)
+        {
+            var e = e || event;
+
+            // 获取图片相对浏览器的距离
+            var x = e.clientX - img.offsetLeft;
+            var y = e.clientY - img.offsetTop;
+
+            document.title = "X:" + x + 'Y:' + y;
+
+            //图片等比缩放
+            box.scrollTop = y*4 - 120;
+            box.scrollLeft = x*4 - 120;
+
+            box.style.display = 'block';
+        }
+
+        img.onmouseout = function()
+        {
+            box.style.display = 'none';
+        }
+    </script>
+</html>

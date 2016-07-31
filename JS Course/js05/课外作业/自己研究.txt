@@ -1,0 +1,17 @@
+offset
+    offsetHeight
+    offsetWidth
+    offsetTop
+    offsetLeft
+
+client
+    clientHeight
+    clientWidth
+    clientTop
+    clientLeft
+
+scroll
+    scrollHeight
+    scrollWidth
+    scrollTop
+    scrollLeft

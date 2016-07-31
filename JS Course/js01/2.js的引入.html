@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 引入外部的css文件 -->
+    <link rel="stylesheet" href="">
+    <!-- 4.通过外部引入js文件 -->
+    <script src="./js.js">
+        写在这里面的代码无效
+        外部引入的js标签对里面的内容相当于注释
+        alert('我是写在引入外部js同时，写的js代码');
+    </script>
+</head>
+<body>
+    <!-- 2.通过http协议引入js  -->
+    <a href="http://www.baidu.com">百度</a>
+    <a href="javascript:alert(1)">百度</a>
+    <!-- 通过return false阻止默认行为 -->
+    <a href="" onclick="return false">去百度</a>
+    <a href="http://www.baidu.com" onclick="return test();">百度1</a>
+
+    <!-- 3.通过事件引入js代码 -->
+    <a href="http://www.bai.com" onclick="alert('想去百度？')">去百度</a>
+    <a href="http">去百度</a>
+
+</body>
+<script>
+    //1.直接写在script标签里面
+    //这是写在js里面的代码
+    /*
+        这是js的多行注释
+     */
+    // alert(1);
+    function test()
+    {
+        return false;
+    }
+</script>
+</html>

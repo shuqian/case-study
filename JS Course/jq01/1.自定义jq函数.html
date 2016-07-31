@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       /* p{font-size:20px;}
+        #red{color:red;}
+        .blue{color:blue;}*/
+    </style>
+</head>
+<body>
+    <p>#################1</p>
+    <p>#################</p>
+    <p id="red">#################</p>
+    <p>#################</p>
+    <p class="blue">#################</p>
+    <p>#################</p>
+    <p class="blue">#################</p>
+    <p>#################</p>
+    <p class="blue">#################</p>
+    <p>#################</p>
+</body>
+    <script src="./myjQuery.js"></script>
+    <script>
+        /*
+        //找对象  改属性
+        var p = document.getElementsByTagName('p');
+
+        //找到的p是一个数组
+        // p.style.fontSize = '20px';
+
+        for (var i=0; i<p.length; i++) {
+            p[i].style.fontSize = '20px';
+        }
+        */
+
+
+        // $('#red').innerHTML = '';
+        // var val = $('p').html();
+        // alert(val);
+
+
+        // $('#red').css('color','red').html('I Love You');
+        // var val = $('#red').css('color');
+        // alert(val);
+
+        jQuery('p').attr('title','hello');
+        var title = $('p').attr('title');
+        alert(title);
+
+
+    </script>
+</html>

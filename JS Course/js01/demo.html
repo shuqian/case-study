@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <p>全都说废话啊啊啊啊啊啊啊啊啊啊啊啊</p>
+        <button id="btn">(10秒后)下一步</button>
+    </center>
+</body>
+<script>
+    //1.找对象
+    var btn = document.getElementById('btn');
+
+    //2.改属性
+    btn.disabled = 'true';
+    num = 10;
+    timmer = setInterval(function(){
+        num--;
+        btn.innerHTML = '(' + num + '秒后)下一步';
+        if (num == 0) {
+            clearInterval(timmer);
+            btn.disabled = false;
+            btn.innerHTML = '下一步';
+        }
+    },1000);
+
+
+</script>
+</html>

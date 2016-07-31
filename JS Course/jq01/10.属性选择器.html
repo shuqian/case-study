@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <p>#################</p>
+    <p title="lunoo">#################lun</p>
+    <p>#################</p>
+    <p title="lunjian">#################lunjia</p>
+    <p>#################</p>
+    <p>#################</p>
+    <p title="good" info="word">#################good</p>
+    <p>#################</p>
+    <p title="testoo">#################testoo</p>
+    <p>#################</p>
+</body>
+    <script>
+
+        // $('p[title = lun]').css('color','red');
+        // $('p[title ^= lun]').css('color','red');
+        // $('p[title $= o]').css('color','red');
+        // $('p[title *= o]').css('color','red');
+        // $('p[title != lunoo]').css('color','red');
+        $('p[title=good][info]').css('color','red');
+
+    </script>
+</html>

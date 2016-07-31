@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="./11.jpg" />
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+         */
+         var img = document.getElementById('img');
+
+        img.onload = function()
+        {
+            alert('图片加载成功');
+        }
+
+        //图片加载失败(设置默认图片)
+        img.onerror = function()
+        {
+            alert('图片加载失败');
+            this.src = './2.jpg'
+        }
+    </script>
+</html>

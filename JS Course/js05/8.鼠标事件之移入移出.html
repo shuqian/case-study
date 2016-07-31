@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:150px;
+            height:150px;
+            background:blue;
+        }
+
+        #big{
+            width:200px;
+            height:300px;
+            background:green;
+            display:none;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="left:0px; top:0px;"></div>
+    <div id="big"></div>
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave
+                onmouseenter
+
+                onmousepress
+
+         */
+
+        var box = document.getElementById('box')
+        var big = document.getElementById('big')
+        var timmer;
+
+        box.onmouseover = big.onmouseover =function()
+        {
+            // this.style.background = 'pink';
+            clearTimeout(timmer);
+            big.style.display = 'block';
+        }
+
+        box.onmouseout = big.onmouseout = function()
+        {
+            // this.style.background = 'blue';
+            timmer = setTimeout(function(){
+                big.style.display = 'none';
+            },200)
+        }
+
+        // big.onmouseover = function()
+        // {
+        //     big.style.display = 'block';
+        // }
+
+        // big.onmouseout = function()
+        // {
+        //     big.style.display = 'none';
+        // }
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <font size="6" id="myfont">java<font color='red'>s</font>cript跑马灯</font>
+</body>
+<script>
+    //
+    var str = 'JavaScript跑马灯';
+    // str = str[4];
+    // alert(str);
+    var myfont = document.getElementById('myfont');
+    // res = str.substr(4,1);
+    // alert(res);
+    //定义一个函数，处理我想要的字符串
+    function getStr(num,str)
+    {
+        var tmp = str.substr(0,num);
+        tmp += '<font color="red" size="7">' + str[num] + '</font>';
+
+        tmp += str.substr(num+1);
+        // alert(tmp);
+
+        return tmp;
+    }
+    // getStr(3,str);
+    var num = 0;
+    setInterval(function(){
+        if (num >= str.length) num = 0;
+        myfont.innerHTML = getStr(num,str);
+        num++;
+    },100);
+
+</script>
+</html>

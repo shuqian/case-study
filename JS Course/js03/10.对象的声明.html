@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">求虐</button>
+</body>
+    <script>
+        /*
+            对象：
+
+
+         */
+        //声明对象方式1：
+        var list = [1,2,3,4];
+        var obj = {name:'jack',age:18};
+        // alert(typeof list);
+        // alert(obj.name);
+
+        //声明对象方式2：
+        var obj = new Object();
+        alert(typeof obj);
+        obj.name = 'jack';
+        alert(obj.name);
+        //可以访问一个不存在的属性，返回值是undefined
+        alert(obj.sex);
+        //访问一个不存在的方法时，会报错，下面代码不执行
+        alert(obj.eat());
+        obj.say = function(){alert(1)};
+        obj.say();
+
+        //对象声明3：    找对象
+        //1.document.getElementById()    对象
+        //2.document.getElementsByTagName('tr')    得到的是一个数组类型的对象
+
+    </script>
+</html>

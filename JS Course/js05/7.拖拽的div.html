@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:150px;
+            height:150px;
+            background:blue;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="left:0px; top:0px;"></div>
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave
+                onmouseenter
+
+                onmousepress
+
+         */
+
+        var box = document.getElementById('box')
+
+        //鼠标按下的时候触发
+        box.onmousedown = function(e)
+        {
+            var e = e || event;
+            //计算点击的位置相对于原点的差值
+            var x = e.clientX - parseInt(box.style.left);
+            var y = e.clientY - parseInt(box.style.top);
+            // alert(x);
+
+            //鼠标移动的时候触发
+            document.onmousemove = function(e)
+            {
+                var e = e || event;
+                //修改位置
+                box.style.left = e.clientX - x + 'px';
+                box.style.top = e.clientY - y + 'px';
+                document.title = "X:" + e.clientX +　"Y:" + e.clientY
+            }
+        }
+
+        //鼠标弹起的时候触发
+        box.onmouseup = function()
+        {
+            document.onmousemove = null;
+        }
+    </script>
+</html>

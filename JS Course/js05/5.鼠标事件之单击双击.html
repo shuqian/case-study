@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">测试</button>
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave
+                onmouseenter
+
+                onmousepress
+
+         */
+
+        var btn = document.getElementById('btn')
+        var timmer;
+        //可以利用定时器区分单击跟双击
+        btn.onclick = function()
+        {
+            clearTimeout(timmer);
+            timmer = setTimeout(function(){
+                console.log('单击了');
+            },1000)
+
+        }
+
+        btn.ondblclick = function()
+        {
+            clearTimeout(timmer);
+            console.log('双击了');
+        }
+
+
+    </script>
+</html>

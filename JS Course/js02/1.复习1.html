@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{width:200px; height:150px; background:pink; position:absolute; left:40%; top:40%; display: none;}
+    </style>
+
+</head>
+<body>
+    <div id="box">
+        <button>确定</button>
+        <button>取消</button>
+    </div>
+    <!-- <form action="./1.php">
+        <button>提交</button>
+    </form> -->
+    <button onclick="alert(1)">点击</button>
+    <!-- void() 把这个标签当成一个普通的标签使用 -->
+    <a href="javascript:void()" >百度</a>
+
+    <!-- 通过return false 阻止a标签的默认行为 -->
+    <a href="http://www.baidu.com" onclick="return false">百度</a>
+
+    <a href="./1.php?a=del&id=1" onclick="return confirm('数据无价，谨慎操作')">删除</a>
+    <a href="./1.php?a=del&id=1" onclick="return check()">删除</a>
+</body>
+<script>
+    /*
+        1.直接写在script标签里
+        2.通过事件引入js代码
+        3.通过标签协议引入js
+        4.在外部引入js文件
+
+
+        js调试工具
+
+        1.alert()     终断代码执行
+        2.document.write()    代码执行完毕后会覆盖整个页面    不能出现在事件
+        3.console.log()    在控制台输出
+        4.console.dir()    打印数组
+        5.document.title
+        6.debugger  断点
+     */
+    // alert(1);
+
+    // res= confirm('测试');
+    // alert(res);
+
+    var str = 'name';
+
+    function check()
+    {
+        // 1.找对象
+        var box = document.getElementById('box');
+        box.style.display = 'block';
+        return false;
+    }
+
+</script>
+<script src="./js.js"></script>
+</html>

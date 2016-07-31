@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">测试</button>
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave
+                onmouseenter
+
+                onmousepress
+
+         */
+
+        var btn = document.getElementById('btn')
+
+        //鼠标按下的时候触发
+        btn.onmousedown = function()
+        {
+            console.log('按下了');
+        }
+
+        //鼠标弹起的时候触发
+        btn.onmouseup = function()
+        {
+            console.log('弹起了');
+        }
+
+        btn.onclick = function()
+        {
+            console.log('单击了一次');
+        }
+
+        //鼠标移动的时候触发
+        document.onmousemove = function(e)
+        {
+            var e = e || event;
+            document.title = "X:" + e.clientX +　"Y:" + e.clientY
+        }
+
+    </script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jsonp跨域 -->
+    <script>
+        function test(res)
+        {
+            alert(res);
+        }
+
+    </script>
+</body>
+    <!-- 跨域解决 -->
+    <!-- script可以加载任意位置的文件 -->
+    <!-- script可以加载远程的php文件 -->
+    <!-- php文件中输出一个函数，函数调用的时候，将要传过来的数据作为实参 -->
+    <!-- js中准备一个函数，接受处理跨域请求回来数据 -->
+    <script src="http://xdl.com/gz16/js09/js.php"></script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        数据类型
+        typeof   查看数据类型
+
+        1.bool  布尔型
+            true fales
+
+        2.undefined
+            undefined  定义变量没有赋值
+
+        3.object
+            ☆：null一个特殊的对象   空对象
+
+        4.number
+            不分整形跟浮点型
+            浮点型运算不准确     精度高
+            Infinity  无限大
+
+        5.string  字符串类型
+
+     */
+    /*
+        单引号不解析变量
+        双引号也不解析变量
+        如果要解析变量的，拼接
+
+        单双引号不能嵌入
+        解析所有转义符
+
+     */
+    var num = 10;
+
+    var res = 'hel{num}lo';
+    var res = "hel{num}lo";
+    // tmp = 'hel' + num + 'lo';
+    res = 'jack\'father';
+    res = 'name\r\njack';
+
+    console.log(res);
+    console.log(typeof res);
+
+</script>
+</html>

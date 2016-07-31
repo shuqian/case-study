@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" >
+        <input type="text" name="name"><br>
+        <input type="text" name="age"><br>
+    </form>
+    <hr>
+    <form action="">
+        <input type="text" name="name"><br>
+        <input type="text" name="age"><br>
+    </form>
+    <div id="box">我啊你</div>
+</body>
+    <script>
+        /*
+            常用的属性
+            //获取页面所有的form表单 返回一个集合
+            document.forms
+         */
+        //获取页面中所有的form表单，返回的是一个集合
+        var forms = document.forms;
+        // console.dir(forms);
+
+        //forms表单中所有的元素集合
+        var ment = forms[0].elements;
+        // console.dir(ment);
+        ment[0].title = '请输入用户名';
+        forms[0].action = './1.php';
+
+        //通过元素的name值直接操作这个节点
+        forms[0].name.value = '伦哥';
+        forms[0].age.value = 18;
+
+        //在页面中定义的所有ID都可以直接使用，不过不建议这样去用
+        // box.innerHTML = '不要这样去使用';
+
+        //select
+        //options(集合)
+
+        //表格  table  tr  td
+        //rows[]   行集合
+        //cells[]  列集合
+
+
+    </script>
+</html>

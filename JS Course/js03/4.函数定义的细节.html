@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">求虐</button>
+</body>
+    <script>
+        //函数   一种数据类型
+
+        /*
+            函数定义的细节
+            1.函数可以重复定义
+            2.形参可以不传值，返回值是undefined
+            3.形参不能有默认值，除了火狐
+            4.如果要给函数设置默认值，那么可以通过判断形参是否是undefined
+
+
+         */
+
+        function test()
+        {
+            alert(1);
+        }
+
+        //形参不能有默认值，除了火狐
+        function test(a)
+        {
+            //变相的设置默认值
+            if (a === undefined) a = 20;
+            // alert(2);
+            alert(a);
+        }
+        test();
+
+    </script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="test(this);">点击</button>
+    </div>
+    <div id="box"></div>
+</body>
+    <script>
+        /*
+            节点信息
+                nodeName
+                nodeValue
+                nodeType
+
+            根节点
+                document.documentElement             HTML
+                document.body                        body
+
+            定位节点
+                document.getElementById()
+                document.getElementsByTagName()
+
+            节点操作（小范围查找）
+                属性
+                    firstChild     大儿子
+                    lastChild      幺儿子
+                    chindNodes     所有的子节点
+                    children       所有元素子节点
+                    parentNdoe     父节点
+                    nextSibling    下一个兄弟节点
+                    previousSibling 上一个兄弟节点
+
+                //属性集合（数组）
+                attributes
+
+                方法
+                    //动态创建一个节点
+                    document.createElememt('div')
+
+                    //添加节点（子节点）（不会产生新节点，作用直接剪切）
+                    appendChild()       添加到最后
+                    insertBefore(div,position)      添加早某个元素之前(第一个参数是要添加的对象，第二个参数是相对要添加元素位置)
+
+
+
+
+         */
+        /*
+         var link = document.getElementById('link');
+         // alert(link.attributes);
+         console.dir(link.attributes);
+         */
+
+        //动态创建节点
+        var div = document.createElement('div');
+
+        div.innerHTML = '我是动态创建的';
+
+        // document.body.appendChild(div);
+
+        // document.body.insertBefore(div,document.body.firstChild);
+
+
+        function test(obj)
+        {
+            var box = document.getElementById('box');
+            //html中对象是不会凭空产生，本来button就存在我的DOM树上，相当于剪切
+            box.appendChild(obj);
+        }
+
+    </script>
+</html>

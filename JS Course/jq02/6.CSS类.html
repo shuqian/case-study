@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <style>
+        #box{width:300px; height:300px; border:1px solid red}
+        .red{background:red}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    $('#box').click(function(){
+        /*
+        if ($(this).hasClass('red')) {
+            $(this).removeClass('red');
+        } else {
+            $(this).addClass('red');
+        }
+        */
+       $(this).toggleClass('red');
+    });
+</script>
+
+</html>

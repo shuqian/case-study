@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span></span>
+        <b></b>
+    </div>
+    <input type="checkbox" checked="true">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <input type="checkbox">I Love You<br>
+    <!-- <button onclick="select(true)">全选</button>
+    <button onclick="select(false)">全不选</button>
+    <button onclick="fanxuan();">反选</button> -->
+    <button onclick="get(1)">全选</button>
+    <button onclick="get(2)">全不选</button>
+    <button onclick="get(3);">反选</button>
+</body>
+<script>
+    //javascript特效本质
+    //找对象  改属性
+    //Id:   docuemnt.getElementById();    就是一个对象
+    //标签名   document.getElementsByTagName('tr')    数组
+
+    var inputs = document.getElementsByTagName('input');
+    // console.dir(inputs);
+    function select(mark)
+    {
+       for(i=0; i<inputs.length; i++) {
+            inputs[i].checked = mark;
+       }
+    }
+
+    function fanxuan()
+    {
+        for(i=0; i<inputs.length; i++) {
+            inputs[i].checked = !inputs[i].checked;
+       }
+    }
+
+    function get(num)
+    {
+        switch(num) {
+            case 1:
+                for(i=0; i<inputs.length; i++) {
+                    inputs[i].checked = true;
+               }
+               break;
+
+            case 2:
+                for(i=0; i<inputs.length; i++) {
+                    inputs[i].checked = false;
+               }
+               break;
+
+            case 3:
+                for(i=0; i<inputs.length; i++) {
+                    inputs[i].checked = !inputs[i].checked;
+               }
+               break;
+        }
+    }
+</script>
+
+</html>

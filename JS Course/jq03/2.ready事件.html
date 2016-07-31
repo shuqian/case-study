@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+    <script>
+        /*
+        //重复定义相当于覆盖   页面图片加载完成后才触发
+        window.onload = function()
+        {
+            // $('#box').html('周末了');
+            alert(1);
+        }
+
+        window.onload = function()
+        {
+            alert(2);
+        }
+        */
+
+        //可以重复定义    页面加载完成后就触发
+        $(document).ready(function(){
+            // alert(1);
+        })
+
+        $(document).ready(function(){
+            // alert(2);
+        })
+
+    </script>
+<body>
+    <div id="box">点击</div>
+</body>
+    <script>
+
+        // $('#box').click(function(){
+        //     alert(1);
+        // })
+
+        // $('#box').click(function(){
+        //     alert(2);
+        // })
+
+    </script>
+</html>

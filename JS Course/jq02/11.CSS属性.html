@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            border:8px solid red;
+            padding:7px;
+            margin:9px;
+            position:absolute;
+            top:200px;
+            left:200px;
+        }
+
+        body{height:1000px;}
+    </style>
+</head>
+<body>
+    <p>班长好帅！！</p>
+
+    <div id="box"></div>
+</body>
+    <script>
+        // $('p').css('color','red').css('fontSize','20px');
+        $('p').css({"color":"red","fontSize":"40px"});
+
+        //滚动条宽高   没有兼容性问题
+        $(document).scrollTop()
+
+        //offset  返回对象有两个属性  left top   相对于body
+        //position   返回对象有两个属性  left  top   相对于父级
+    </script>
+</html>

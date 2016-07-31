@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">求虐</button>
+</body>
+    <script>
+        /*
+            变量的作用域
+            1.函数内部可以调用全局变量
+            2.在函数内使用var定义的变量的是局部变量，外部无法调用
+
+
+         */
+        num = 10;
+
+        function test()
+        {
+            //var 定义变量，在函数内使用var定义的变量是局部变量
+            var num1 = 20;
+            alert(num);
+            // alert(num1);
+            // alert(num2);
+            function son()
+            {
+                var num2 = 30;
+                alert(num);
+                alert(num1);
+                // alert(num2);
+            }
+            son();
+        }
+
+        test();
+        //局部变量外部无法调用
+        alert(num1);
+
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    Name:<input type="text" onblur="check(this)"><font></font>
+</body>
+    <script>
+        function check(obj)
+        {
+            var name = obj.value;
+            // alert(name);
+
+            var ajax = new XMLHttpRequest;
+            ajax.open('get','./ajax.php?name='+name,true);
+            ajax.send();
+            ajax.onreadystatechange = function()
+            {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    var res = ajax.responseText;
+                    if (res == 1) {
+                        obj.nextSibling.innerHTML = '用户名已存在';
+                        obj.nextSibling.color = 'red';
+                    } else {
+                        obj.nextSibling.innerHTML = '用户名可用';
+                        obj.nextSibling.color = 'green';
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+</html>

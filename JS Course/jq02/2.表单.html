@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <form action="">
+        Name:<input type="text" disabled><br>
+        Pwd:<input type="password"><br>
+        rPwd:<input type="password"><br>
+        sex:
+            <input type="radio" checked>男
+            <input type="radio">女
+            <input type="radio">妖
+            <br>
+        like：
+            <input type="checkbox">篮球
+            <input type="checkbox">足球
+            <input type="checkbox">乒乓球
+
+        <input type="hidden" value="hid"><br>
+        <input type="submit" value="提交"><br>
+        <input type="reset" value="重置"><br>
+
+
+    </form>
+</body>
+    <script>
+        /*********************表单************************/
+        // alert($('input:text').length);
+        // alert($('input:password').length);
+        // alert($('input:radio').length);
+        // 匹配所有不可见的元素或者是type是hidden
+        // var list = $(':hidden').get();
+        // console.dir(list);
+        // alert($('input:checkbox').length);
+        // alert($('input:submit').length);
+        // alert($('input:reset').length);
+
+
+        /*********************表单属性********************/
+        // $('input:enabled').css('border','1px solid red' );
+        // $('input:disabled').css('border','1px solid red' );
+
+        $('input:radio').attr('checked',false);
+    </script>
+</html>

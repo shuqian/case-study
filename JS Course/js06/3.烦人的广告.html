@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .left{float:left;}
+        .right{float:right;}
+        .right div{width:200px; height:200px; background:green}
+        #menu{background:pink;position:relative;}
+    </style>
+</head>
+<body>
+    <div class="left">
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+        <p>全是废话啊</p>
+    </div>
+    <div class="right">
+        <div></div>
+        <div id="menu" style="top:0px"></div>
+    </div>
+</body>
+    <script>
+    var menu = document.getElementById('menu');
+
+    window.onscroll = function()
+        {
+            //解决兼容
+            var top = document.documentElement.scrollTop || document.body.scrollTop;
+            // alert(menu.offsetTop)
+            // alert(top);
+            var mtop = menu.offsetTop;
+
+           var num = top - mtop;
+           document.title = num;
+           if (num > 0) {
+                menu.style.top = num + 'px';
+           } else {
+                menu.style.top = '0px';
+           }
+        }
+
+    </script>
+</html>

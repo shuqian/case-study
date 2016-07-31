@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            width:10000px;
+            height:2000px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+    <script>
+        /*
+            鼠标的事件属性
+                    e.clientX
+                    e.clientY
+                    button
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave     移出（在子元素上不会触发）
+                onmouseenter     移入（在子元素上不会触发）
+
+            其他事件
+                oncontextmenu
+                onresize
+                onscroll
+
+         */
+        //页面大小变化的时候，连续触发
+        window.onresize = function()
+        {
+            alert('屏幕改变了');
+        }
+
+        //连续触发    滚动条滚动
+        window.onscroll = function()
+        {
+            console.log(11);
+        }
+    </script>
+</html>

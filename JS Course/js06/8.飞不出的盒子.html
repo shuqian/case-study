@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            border-radius:50px;
+            position:absolute;
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+    <script>
+        var box = document.getElementById('box');
+        var x = 5;
+        var y = 5;
+        //课外作业（窗口变化的大小）
+        //获取屏幕宽度
+        var bw = document.documentElement.clientWidth;
+        var bh = document.documentElement.clientHeight;
+
+        var w = box.offsetWidth;
+        // var h = box.offsetWidth;
+
+        setInterval(function(){
+            if (box.offsetLeft < 0 || box.offsetLeft > bw -w ) {
+                // alert(1);
+                x = -x;
+            }
+            if (box.offsetTop < 0 || box.offsetTop > bh -w ) {
+                // alert(1);
+                y = -y;
+            }
+            box.style.left = box.offsetLeft + x + 'px';
+            box.style.top = box.offsetTop + y + 'px';
+        },10);
+
+    </script>
+</html>

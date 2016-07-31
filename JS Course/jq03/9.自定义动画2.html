@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <script src="./easing.js"></script>
+    <style>
+        #die{width:100px; height:100px; background:red;position:absolute;}
+    </style>
+</head>
+
+<body>
+    <button>开始</button>
+    <button>停止</button>
+    <div id="die"></div>
+</body>
+    <script>
+        //.delay(2000)  (延迟)
+        $('button:first').click(function(){
+            $('#die').animate({
+                'top':'400px'
+            },2000).animate({
+                'left':'1000px'
+            },2000).animate({
+                'top':'40px'
+            },2000).animate({
+                'left':'20px'
+            },2000)
+        }).next().click(function(){
+            //第一个参数true是清空队列（停止）
+            //第二个参数是设置成true时候是结束当前动画
+            $('#die').stop(false,true);
+        })
+    </script>
+</html>

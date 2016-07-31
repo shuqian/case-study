@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+            /*
+                异步：
+                    小弟出去执行他的任务，回来之后再处理
+                    主程序继续执行
+
+             */
+            /*
+            var ajax = new XMLHttpRequest;
+            //异步请求
+            ajax.open('get','./yibu.php',true);
+
+            //post数据是通过send这个方法发送的
+            ajax.send();
+            ajax.onreadystatechange = function()
+            {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    var res = ajax.responseText;
+                    alert('小弟回来了');
+                }
+            }
+
+            alert('主程序');
+            */
+
+
+            //同步
+            var ajax = new XMLHttpRequest;
+            ajax.open('get','yibu.php',false);
+            ajax.send();
+            var res = ajax.responseText;
+            alert('小弟回来了');
+
+            alert('主程序');
+
+    </script>
+</html>

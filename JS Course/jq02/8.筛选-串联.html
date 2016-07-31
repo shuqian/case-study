@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <p>##########################</p>
+    <p>##########################</p>
+    <p>##########################</p>
+    <p class="test">##########################test</p>
+    <p>##########################</p>
+    <p>##########################</p>
+    <p>##########################</p>
+    <p>##########################</p>
+    <p>##########################</p>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+    <span>@@@@@@@@@@@@@@@@@@@@</span><br>
+</body>
+<script>
+    //在原有的集合中追加一个新的集合
+    // $('p').css('fontSize','20px').add('span').css('color','red');
+    // 返回集合破坏前的原型
+    // $('p').css('fontSize','20px').add('span').css('color','red').end().css('color','yellow');
+
+    $('.test').siblings().css('color','red').andSelf().css('color','pink');
+
+</script>
+
+</html>

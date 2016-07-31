@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+
+        // alert(navigator.userAgent);
+        var str = navigator.userAgent;
+        //Mozilla/5.0 (Windows NT 5.1; rv:47.0) Gecko/20100101 Firefox/47.0
+        // if (str.indexOf('MSIE') == -1) {
+        //     alert('标准浏览器');
+        // } else {
+        //     alert('坑妈的IE');
+        // }
+
+        if (document.all) {
+            alert('坑妈的IE');
+        } else {
+            alert('标准浏览器');
+        }
+
+    </script>
+</html>

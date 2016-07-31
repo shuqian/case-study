@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Index</title>
+        <style>
+            body{background:lightblue}
+            #water li{
+                list-style:none;
+                float:left;
+            }
+            #water li div{
+                background:white;
+                padding:4px;
+                margin:2px;
+            }
+            img{border:2px solid black}
+        </style>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var timmer;                //优化滚动条
+        var p_width = 230;
+
+        //调用内部所有函数
+        window.onload = function()
+        {
+            var num = cols();
+            //动态创建ul
+            addul(num);
+            //加载图片
+            picFun();
+        }
+
+        //滚动加载
+        window.onscroll = function()
+        {
+            clearTimeout(timmer);
+            //获取三个高度
+            timmer = setTimeout(function(){
+                var wHeight = document.documentElement.clientHeight;
+                var sHeight = document.documentElement.scrollTop || document.body.scrollTop;
+                var dHeight = document.documentElement.scrollHeight;
+
+                document.title = '窗：' + wHeight + '滚：' + sHeight + '文：' + dHeight;
+                if (dHeight - wHeight - sHeight < 200) {
+                    picFun();
+                }
+            },100)
+
+        }
+
+        window.onresize = function()
+        {
+            // alert(1);
+            //清空所有的
+            var ul = document.getElementById('water');
+            document.body.removeChild(ul);
+
+            //重写加载
+            var num = cols();
+            addul(num);
+            picFun();
+
+        }
+
+        //动态计算列
+        function cols()
+        {
+            //获取屏幕的宽度度
+            var width = document.documentElement.clientWidth - 25;
+            var num = Math.floor(width/(p_width+20));
+
+            return num;
+        }
+
+
+        //动态创建ul
+        function addul(num)
+        {
+            var ul = document.createElement('ul');
+            ul.id = 'water';
+            for (var i=0; i<num; i++) {
+                var lis = document.createElement('li');
+                ul.appendChild(lis);
+            }
+            document.body.appendChild(ul);
+        }
+
+
+
+        //通过ajax加载图片
+        function picFun()
+        {
+            var ajax = new XMLHttpRequest;
+            ajax.open('get','./photo.php',true);
+            ajax.send();
+            ajax.onreadystatechange = function()
+            {
+                if (ajax.readyState ==4 && ajax.status == 200) {
+                    var res = ajax.responseText;
+                    // alert(res);
+                    // 处理图片  想想代码都很多
+                    picLoad(res);
+                }
+            }
+        }
+
+
+
+        //处理加载过来的图片
+        function picLoad(res)
+        {
+            // alert(res);
+            var obj = JSON.parse(res);
+            // console.dir(obj);
+            // alert(obj.length);
+
+            var ul = document.getElementById('water');
+            var lis = document.getElementsByTagName('li');
+
+
+            for (var i=0; i<obj.length; i++) {
+                var picName = obj[i];
+                var div = document.createElement('div');
+                div.innerHTML = '<img src="./uploads/'+ picName +'" width="230">';
+
+                //将图片加载到第一列
+                // lis[0].appendChild(div);
+                // 将图片加载到最短的li中去
+                var mask = -1;
+                for (var j=0; j<lis.length; j++) {
+                    //获取当前li的高度
+                    // alert(1);
+                    var cur = lis[j].offsetHeight;
+                    // alert(cur);
+                    if (cur < mask || mask == -1) {
+                        mask = cur;
+                        var sli = lis[j];
+                        sli.appendChild(div);
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</html>

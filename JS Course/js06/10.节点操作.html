@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 这是注释 -->
+    <a href="www.baidu.com">百度</a>
+
+    <div id="box">
+        <span></span>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li>啊啊啊啊</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <input type="text" onblur="check(this)"><font></font>
+</body>
+    <script>
+        /*
+            BOM
+            DOM
+                事件
+                节点
+                    整个文档是一个文档节点
+                    每个 HTML 标签是一个元素节点
+                    包含在 HTML 元素中的文本是文本节点
+                    每一个 HTML 属性是一个属性节点
+                    注释属于注释节点
+
+                ☆：整个HTML都是节点
+
+                节点信息
+                    nodeName（节点名称）
+                        元素节点的 nodeName 是标签名称
+                        属性节点的 nodeName 是属性名称
+                        文本节点的 nodeName 永远是 #text
+                        文档节点的 nodeName 永远是 #document
+
+                    nodeValue（节点值）
+                        对于文本节点，nodeValue 属性包含文本。
+                        对于属性节点，nodeValue 属性包含属性值。
+
+                        ☆：nodeValue 属性对于文档节点和元素节点是不可用的。
+
+                    nodeType（节点类型）
+                        元素 1
+                        属性 2
+                        文本 3
+                        注释 8
+                        文档 9
+
+                根节点（不用获取直接使用）
+                    document.documentElement     HTML
+                    document.body                body
+
+                节点定位
+                    document.getElementById()
+                    document.getElementsByTagName()
+
+                属性
+                    firstChild          大儿子
+                    lastChild           幺儿子
+                    childNodes          所有的子节点
+                    children            所有的子标签节点
+                    parentNode          父节点
+                    nextSibling         下一个兄弟节点
+                    previousSibling      上一个兄弟节点
+
+                方法
+                    增 、删、改、查
+         */
+        /*
+            写一个表单验证
+            input至少5个以上
+            失去焦点事件
+
+            在验证过程中，有任何一个验证失败都不能提交
+
+         */
+
+         var msg = /\d/;
+
+         var res = msg.test('aaaa');
+         alert(res);
+
+        var box = document.getElementById('box');
+        // alert(box.nodeName);
+        // alert(document.nodeName);
+
+        function check(obj)
+        {
+            var msg = obj.value;
+            if (msg.length < 6) {
+                obj.nextSibling.innerHTML = '用户名不能少于6个字符串';
+                obj.nextSibling.color = 'red';
+            }
+        }
+
+    </script>
+</html>

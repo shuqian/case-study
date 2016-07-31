@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+        数据类型
+        typeof   查看数据类型
+
+        1.bool  布尔型
+            true fales
+
+        2.undefined
+            undefined  定义变量没有赋值
+
+        3.object
+            ☆：null一个特殊的对象   空对象
+
+        4.number
+            不分整形跟浮点型
+            浮点型运算不准确     精度高
+            Infinity  无限大
+
+
+
+
+     */
+    // var num =10;
+    // alert(typeof num);
+
+    var data = 10;
+
+    data = 10.2;
+    // alert(0.1+0.2);
+    //浮点型运算不准确     精度高
+    // if (0.1+0.2 == 0.3) {
+    //     alert('Y');
+    // } else {
+    //     alert('N');
+    // }
+
+    //进制
+    //二进制   数值范围只能在[0-1]
+    data = 0101;
+
+    //八进制
+    data = 0704;
+
+    //十六进制
+    data =  0xff;
+
+    //位运算
+    //数学计数法
+
+    data = 2.3e10;   //右移
+    data = 2.3e-2;   //左移
+
+    //Infinity  无限大
+    data = 2/0;
+    //js中数值最大的
+    // alert(Number.MAX_VALUE);
+
+    //NaN   js中一个奇葩的类型    不是一个数的数字
+    data = 'hello' - 5;
+
+    //js中唯一一个连自己都不等于自己的奇葩
+    // if (NaN == NaN) {
+    //     alert('Y');
+    // } else {
+    //     alert('N');
+    // }
+    //与NaN这个奇葩参与运算，那么你也会感染
+    data = NaN + 5;
+
+    console.log(data);
+    console.log(typeof data);
+
+</script>
+</html>

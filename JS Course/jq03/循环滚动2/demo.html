@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <style>
+        *{margin:0px; padding:0px;}
+        #gun{width:700px;overflow:hidden;position:relative;}
+        #gun ul{width:10000px;}
+        #gun ul li{width:700px;float:left;}
+
+        #gun .btn{position:absolute;right:20px;bottom:20px;}
+        #gun .btn span{padding:2px 5px;border:1px solid red;margin:3px}
+        #gun .btn .select{background:red;}
+
+    </style>
+</head>
+<body>
+    <div id="gun">
+        <ul>
+            <li><img src="./images/1.jpg"></li>
+            <li><img src="./images/2.jpg"></li>
+            <li><img src="./images/3.jpg"></li>
+            <li><img src="./images/4.jpg"></li>
+            <li><img src="./images/5.jpg"></li>
+        </ul>
+
+        <div class="btn">
+            <!-- <span class="select">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span> -->
+        </div>
+    </div>
+</body>
+    <script>
+        var width = $('#gun ul li').width();    //获取图片宽度
+        var cur = 1;                            //定义一个初始值
+        var num = $('#gun ul li').length;       //获取图片数量
+        var timmer;                             //定时器
+
+        /**********************3.创建按钮***********************/
+        var str='';
+        for (var i=1; i<=num; i++) {
+            if (i==cur) {
+                str += $('<span class="select"></span>').eq().html(i).appendTo('.btn');
+            } else {
+                str += $('<span></span>').html(i).appendTo('.btn');
+            }
+
+        }
+
+
+        /**********************2.鼠标悬停***********************/
+        $('#gun ul li').hover(function(){
+            stop();
+        },function(){
+            start();
+        })
+
+
+        /**********************1.动起来***********************/
+        function go()
+        {
+            var left = cur * -width;
+            $('#gun ul').animate({'marginLeft':left + 'px'},500,function(){
+                cur++;
+                if (cur >= num) cur = 0;
+            })
+        }
+
+        function start()
+        {
+            timmer = setInterval(go,1500);
+        }
+
+        function stop()
+        {
+            clearInterval(timmer);
+        }
+    </script>
+</html>

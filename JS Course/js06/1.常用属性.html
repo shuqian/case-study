@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+
+            margin:14px;
+            padding:17px;
+
+            border:15px solid red;
+            background:pink;
+
+            position:absolute;
+            left:60px;
+            top:60px;
+
+            overflow:scroll;
+        }
+
+        #son{
+            width:2000px;
+            height:2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="son">测试</div>
+    </div>
+</body>
+    <script>
+        /*
+            offset
+                offsetHeight
+                offsetWidth
+                offsetTop
+                offsetLeft
+
+            client
+                clientHeight
+                clientWidth
+                clientTop
+                clientLeft
+
+            scroll
+                scrollHeight
+                scrollWidth
+                scrollTop
+                scrollLeft
+
+            offsetWidth      包含边框内边距
+            offsetTop        边框到浏览器的距离
+
+            clientHeight     包含内边距
+            clientTop        边框值
+
+            scrollHeight     内边距加上子元素的高度
+            scrollTop        滚动条移动的位置（可读可写）
+
+        浏览器可视的宽高
+            document.documentElement.clientHeight
+            document.documentElement.clientWidth
+
+         */
+         var box = document.getElementById('box');
+
+    </script>
+</html>

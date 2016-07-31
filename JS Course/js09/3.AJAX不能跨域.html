@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+    function getAjax(url,func)
+    {
+        var ajax = new XMLHttpRequest;
+        ajax.open('get',url,true);
+        ajax.send();
+        ajax.onreadystatechange = function()
+        {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                var res = ajax.responseText;
+                // alert(res);
+                // console.log(res);
+                // 处理小弟带回来的数据
+                func(res);
+            }
+        }
+    }
+
+    //相对路径
+    // getAjax('./ajax.php',function(res){
+    //     console.log(res);
+    // });
+
+    //绝对路径
+    /*
+            url   http://www.baidu.com:80/dir/son/index.html
+
+
+
+            同源：协议  域名  端口（不同服务）
+            目录
+
+            跨域：协议、域名、端口其中有一个不同，视为跨域
+
+            bbs.baidu.com
+            news.baidu.com
+            www.baidu.com
+
+     */
+    //ajax不能跨域
+    getAjax('http://xdl.com/test.php',function(res){
+        alert(res);
+    });
+
+    </script>
+</html>

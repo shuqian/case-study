@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <button>测试</button>
+</body>
+    <script>
+        //只能触发一次
+        // $('button').one('click',function(){
+        //     alert(1);
+        // });
+        // $('<button>后妈生的</button>').appendTo('body');
+
+        //动态产生一个元素，只要满足选择器的条件，就会保留原来的事件
+        // $('button').live('click',function(){
+        //     $('<button>后妈生的</button>').appendTo('body');
+        //     //清除事件
+        //     $('button').die();
+        // })
+
+        //给制定元素添加事件
+        $('body').delegate('button','click',function(){
+            $('<button>后妈生的</button>').appendTo('body');
+            $('body').undelegate('button','click');
+        })
+
+    </script>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table width="600" border="1" id="tab">
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>002</td>
+            <td>003</td>
+            <td>004</td>
+            <td>005</td>
+            <td>006</td>
+            <td>007</td>
+            <td>008</td>
+            <td>009</td>
+            <td>010</td>
+        </tr>
+    </table>
+    <script>
+        //1.找对象
+        var tab = document.getElementById('tab');
+
+        var trs = tab.getElementsByTagName('tr');
+        // console.dir(trs);
+        // alert(trs.length);
+        //2.改属性
+        for(var i=0; i<trs.length; i++) {
+            if (i % 3 ==0) {
+                trs[i].bgColor = 'red';
+            } else if(i % 3 ==1) {
+             trs[i].bgColor = 'green';
+            } else {
+             trs[i].bgColor = 'blue';
+            }
+        }
+    </script>
+</body>
+</html>

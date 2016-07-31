@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+    // var res;
+    function getAjax(url,func)
+    {
+        var ajax = new XMLHttpRequest;
+        ajax.open('get',url,true);
+        ajax.send();
+        ajax.onreadystatechange = function()
+        {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                res = ajax.responseText;
+                // alert(res);
+                // return res;
+                // console.log(res);
+                // 处理小弟带回来的数据
+                func(res);
+            }
+        }
+    }
+
+
+
+    // var res = getAjax('./ajax.php');
+    // alert(res);
+    // alert(2);
+    /*
+    function chuli(res)
+    {
+        alert(res);
+    }
+
+    function chuli2(res)
+    {
+        console.log(res);
+    }
+    */
+    // getAjax('./ajax.php',chuli);
+    // getAjax('./ajax.php',function(res){
+    //     alert(res);
+    // });
+
+    getAjax('./ajax.php',function(res){
+        console.log(res);
+    });
+
+
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>hello</button>
+    <button>world</button>
+    <button>I Love You</button>
+    <button>我爱你</button>
+</body>
+    <script>
+        //包装对象
+
+        var str = 'hello';
+        var str1 = new String('hello');
+        // alert(typeof str);
+        // alert(typeof str1);
+
+        // alert(str);
+        // alert(str.substr(1,1));
+
+        //包装对象     临时对象    随用随消
+        str.name = 'jack';
+        // alert(str.name);
+
+        // alert(str1.substr(1));
+
+        //真正的对象
+        str1.name = 'jack';
+        // alert(str1.name);
+        // alert(str1);
+
+        //1.找对象
+        var btns = document.getElementsByTagName('button');
+        // console.dir(btns);
+        for (i in btns) {
+            //在循环体里面的函数不能有变量值
+            btns[i].index = i;
+            btns[i].onclick = function(){
+                // alert(btns[i].innerHTML);
+                alert(this.innerHTML);
+                // alert(btns[this.index].innerHTML);
+
+            }
+        }
+
+    </script>
+</html>

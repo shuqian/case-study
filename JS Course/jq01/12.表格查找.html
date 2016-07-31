@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Index</title>
+    </head>
+    <body>
+        <input type="text"><button onclick="search(this)">搜索</button>
+
+        <table id="mytab" width="600" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>jack</td>
+                <td>男</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>hello</td>
+                <td>男</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>rose</td>
+                <td>男</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>good</td>
+                <td>男</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>rose</td>
+                <td>男</td>
+                <td>18</td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        var mytab = document.getElementById('mytab');
+
+        function search(obj){
+            var keyword = obj.previousSibling.value;
+
+            //alert(keyword);
+
+            //遍历表格 查找内容
+            //遍历行
+            for(var i=0;i<mytab.rows.length;i++){
+                //清空效果
+                mytab.rows[i].bgColor = 'white';
+
+                //遍历列
+                for(var j=0;j<mytab.rows[i].cells.length;j++){
+                    if(mytab.rows[i].cells[j].innerHTML.indexOf(keyword) != -1){
+                        //找到了
+                        mytab.rows[i].bgColor = 'yellow';
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</html>
+

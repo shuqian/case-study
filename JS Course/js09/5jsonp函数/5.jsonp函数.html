@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jsonp跨域 -->
+    <script>
+        function test(res)
+        {
+            alert(res);
+        }
+
+    </script>
+</body>
+    <!-- <script src="http://xdl.com/gz16/js09/js.php"></script> -->
+
+    <script>
+        function jsonp(url,func)
+        {
+            var script = document.createElement('script');
+            var tmpFunc = 'jsonp_' + Math.ceil(Math.random()*10000000);
+
+            //判断url是否有拼接参数
+            if (url.indexOf('?') == -1) {
+                script.src = url+ '?callback=' + tmpFunc;
+            } else {
+                script.src = url+ '&callback=' + tmpFunc;
+            }
+
+            //将一个局部函数变成一个全局函数
+            window[tmpFunc] = func;
+            document.body.appendChild(script);
+        }
+
+        jsonp('http://xdl.com/gz16/js09/js1.php',function(res){
+            alert(res);
+        });
+    </script>
+
+    <script>
+        // function die()
+        // {
+        //     // function son()
+        //     // {
+        //     //     alert(1);
+        //     // }
+        //     window.name = 'jack';
+        //     window.son = function()
+        //     {
+        //         alert(1);
+        //     }
+        // }
+        // die();
+        // son();
+        // alert(name);
+    </script>
+
+
+</html>

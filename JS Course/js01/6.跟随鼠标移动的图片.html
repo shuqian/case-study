@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #img{position:absolute; left:100px; top:100px;}
+    </style>
+</head>
+<body>
+    <img src="./4.jpg" alt="" width="200px" id="img">
+    <script>
+        //1.找对象
+        var img = document.getElementById('img');
+
+        //2.改属性
+
+        document.onmousemove = function(e)
+        {
+            img.style.top = e.clientY + 'px';
+            img.style.left = e.clientX + 'px';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <script>
+        //页面加载完成后触发
+        window.onload = function()
+        {
+            var box = document.getElementById('box');
+            // alert(box.style.width);
+        }
+
+    </script>
+<body>
+    <div id="box" style="width:200px"></div>
+</body>
+    <script>
+        /*
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+         */
+        //在IE中有效
+        window.onunload = function()
+        {
+            // alert('关闭了');
+        }
+
+        //离开页面的时候（即时聊天）
+        window.onbeforeunload = function()
+        {
+            return '我熬你';
+        }
+    </script>
+</html>

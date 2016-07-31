@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{width:200px; height:200px; background:pink; position:absolute; left:10px;}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    //1.找对象
+    var box = document.getElementById('box');
+
+    //2.该属性
+    var num = 0;
+    setInterval(function(){
+        num +=5;
+        box.style.left = num + 'px';
+    },20);
+</script>
+</html>

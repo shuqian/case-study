@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        /*
+            AJAX
+                异步请求的新方法
+                局部刷新
+
+         */
+        //1.创建对象
+        var ajax = new XMLHttpRequest;
+        // alert(ajax);
+
+        //2.建立
+        ajax.open('get','./ajax.php',true);
+
+        //3.确认发送
+        ajax.send();
+
+        //4.判断是否请求成功
+        ajax.onreadystatechange = function()
+        {
+            //判断小弟是否已经活着回来了
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                // alert('大哥，我带好东西给你');
+                var res = ajax.responseText;
+                alert(res);
+
+            }
+        }
+
+
+    </script>
+</html>

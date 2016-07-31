@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{width:10000px; height:10000px;}
+    </style>
+</head>
+<body>
+
+</body>
+    <script>
+        /*
+            BOM
+                浏览器对象模式
+                在网页上声明的变量、对象等等的父级都是window
+                在全局声明的所有变量，对象，函数，都是window的属性和方法
+         */
+        // window.alert(1);
+
+        //window对象属性
+        var res = window.closed;
+        // alert(res);
+        // alert(window.length);
+        // alert(window.name);
+
+
+        // alert(this)
+        var num = 10;
+        // alert(self.num);
+        // alert(top.num);
+        // alert(this.num);
+        // alert(window.num);
+
+        // alert(window.screenLeft);
+        // alert(window.screenTop);
+        //获取浏览器距离屏幕的坐标值    解决兼容性
+        // alert(window.screenX || window.screenLeft);
+        // alert(window.screenY || window.screenTop);
+
+        //window对象的方法
+        // alert();
+        // confirm();
+        // focus();
+        // for (i=0; i<10; i++) {
+        //     // window.open('http://www.baidu.com','','width=300px,height=300px');
+        // }
+        // var newObj = window.open('http://www.baidu.com','','width=300px,height=300px');
+        // newObj.document.write("This is 'myWindow'")
+        // newObj.focus()
+
+        // window.print();
+
+        //IE   移动浏览器
+        // window.moveBy('10','10');
+        // IE  把浏览器移到固定位置   作用从窗口顶部开始
+        // window.moveTo('50','100');
+        //把浏览器放大
+        // window.resizeBy('10','10');
+        // 调整Ie大小
+        // window.resizeTo('400','400');
+
+        //滚动条
+        //每刷新一次，移动100像素
+        // window.scrollBy('100','100');
+        // 把滚动条回到固定的位置
+        // window.scrollTo('100','100');
+
+    </script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <input id="input" type="text"><font id="myfont"></font>
+
+    <!-- 只对select  radio  checkbox -->
+    <select name="" id="" onchange="check(this)">
+        <option value="广州">广州</option>
+        <option value="北京">北京</option>
+        <option value="">上海</option>
+        <option value="">东莞</option>
+    </select>
+
+    <form action="http://www.baidu.com" onsubmit="return tijiao()" onreset="return confirm('确定重写数据吗？')">
+        name:<input type="text">
+            <input type="submit" value="提交" >
+            <input type="reset" value="重置" >
+    </form>
+
+</body>
+    <script>
+        /*
+            表单事件
+                onblur      失去焦点
+                onfocus     获取焦点
+
+                onselect    选中文本
+
+                onchange     改变了选择
+
+                onsubmit     提交
+                onreset      重置
+
+         */
+
+        var input = document.getElementById('input');
+        var myfont = document.getElementById('myfont');
+
+        //失去焦点
+        input.onblur = function()
+        {
+            // console.log('失去焦点');
+            var msg = input.value;
+            if (msg.length > 6) {
+                myfont.innerHTML = '用户名可以使用';
+                myfont.color = 'green';
+            }  else {
+                myfont.innerHTML = '用户名不能少于6个字符串';
+                myfont.color = 'red';
+            }
+        }
+
+        input.onselect = function()
+        {
+            alert('选中的文本');
+        }
+
+        input.onfocus = function()
+        {
+            // console.log('得到焦点');
+            input.value = '请输入用户名';
+        }
+
+        function check(obj)
+        {
+            // alert('改变了选择');
+            alert(obj.value);
+        }
+
+        function tijiao()
+        {
+            if (!true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</html>

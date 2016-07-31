@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="test(event,this);">点击</button>
+</body>
+    <script>
+        /*
+            事件 -- 类似php中的魔术方法
+
+            1.如何绑定事件？
+
+            2.如何获取事件的属性
+                鼠标属性
+                    值永远是相对浏览器原点的位置
+                    e.clientX
+                    e.clientY
+
+            3.一共有哪些事件？
+
+         */
+
+        //事件绑定方式1：
+        /*
+        //没有兼容性问题
+        function test(e,obj)
+        {
+            // alert(1);
+            // alert(e.clientX);
+            // alert(e.clientY);
+            alert(obj.innerHTML);
+
+        }
+        */
+
+        //事件绑定方式2：
+        var btn = document.getElementById('btn');
+        //标准浏览器会自动传一个event对象
+        btn.onclick = function(e)
+        {
+            // alert(e.clientX);
+            // 这是一种方式
+            // if (e === undefined) e = event;
+            // 常用的解决浏览器兼容性问题
+            var e = e || event;
+            alert(e.clientX);
+
+            btn.innerHTML = '求不饿';
+            this.innerHTML = '';
+        }
+
+
+    </script>
+</html>

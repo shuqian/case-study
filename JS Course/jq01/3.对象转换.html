@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <script>
+      /*
+          DOM对象 与 JQ对象  所有方法跟属性都是不通用
+
+
+       */
+       //DOM对象
+       var box = document.getElementById('box');
+       // box.html();
+
+       //DOM   ---->   JQ对象
+       $(box).html('我爱你');
+
+       //JQ对象   返回都是一个数组   JQ--->DOM对象
+       var $box = $('#box');
+       $box[0].innerHTML = '我是变性的';
+
+       $box.get(0).innerHTML = '我们是通用的';
+
+       //唯一一个通用的属性
+       alert($box.length);
+
+       var list = $('p');
+       //get方法如果不传参数，就是把一个数组转换成一个纯粹的数组（join）
+       list = $('p').get();
+       console.dir(list);
+    </script>
+</html>

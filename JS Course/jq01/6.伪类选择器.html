@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>##################</li>
+        <li>##################</li>
+        <li class="red">##################</li>
+        <li>##################</li>
+        <li class="red">##################</li>
+        <li>##################</li>
+        <li class="red">##################</li>
+        <li>##################</li>
+    </ul>
+
+    <h1>00001</h1>
+    <h2>00002</h2>
+    <h3>00003</h3>
+    <h4>00004</h4>
+    <h5>00005</h5>
+    <h6>00006</h6>
+    <h7>00007</h7>
+    <h100>00007</h100>
+    <hello>I Love You</hello>
+
+    <input type="text">
+</body>
+    <script>
+
+        // $('ul li:first').css('color','red');
+        // $('ul li:last').css('color','red');
+        // $('ul li:not(.red)').css('color','red');
+        // $('ul li:eq(2)').css('color','red');
+        // $('ul li:eq(2)').css('color','red');
+        // $('ul li:lt(2)').css('color','red');
+        // $('ul li:gt(2)').css('color','red');
+        //奇数行
+        // $('ul li:odd').css('color','red');
+        //偶数行
+        // $('ul li:even').css('color','green');
+
+        //匹配所有的（h+数字）标签
+        // $(':header').css('color','red');
+
+        //必须先给这个input获取焦点先
+        $('input').focus();
+        $(':focus').css('border','3px solid red');
+
+    </script>
+</html>

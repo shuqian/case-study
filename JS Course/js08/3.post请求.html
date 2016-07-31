@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+            /*
+                get跟post的区别？
+                    get数据2-4kb
+                    post 数据量大
+
+                    一般使用的是get
+
+             */
+            var ajax = new XMLHttpRequest;
+            ajax.open('post','./post.php',true);
+
+            //设置post请求头内容
+            ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+            //post数据是通过send这个方法发送的
+            ajax.send('name=lunge');
+            ajax.onreadystatechange = function()
+            {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    var res = ajax.responseText;
+                    alert(res);
+                }
+            }
+
+
+
+    </script>
+</html>

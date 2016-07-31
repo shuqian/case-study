@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <p>################</p>
+    <p>################</p>
+    <p class="red blue">################red</p>
+    <p>################</p>
+    <p>################</p>
+    <p class="red">################red</p>
+    <p><b>################</b></p>
+    <p>################</p>
+    <p class="red">################red</p>
+    <p>################</p>
+
+    <input type="checkbox" value="0">1<br>
+    <input type="checkbox" value="1">2<br>
+    <input type="checkbox" value="2">3<br>
+    <input type="checkbox" value="3">4<br>
+    <input type="checkbox" value="4">5<br>
+    <button>批量删除</button>
+
+</body>
+<script>
+    // $('p').css('fontSize','20px').eq(3).css('color','red');
+    // $('p').css('fontSize','20px').first().css('color','red');
+    // $('p').css('fontSize','20px').last().css('color','red');
+    // 在当前集合中，筛选符合条件
+    // $('p').css('fontSize','20px').filter('.red').css('color','red');
+    // 当前集合中，筛选不符合条件的
+    // $('p').css('fontSize','20px').not('.red').css('color','red');
+    // 当前集合中，有制定元素
+    // $('p').css('fontSize','20px').has('b').css('color','red');
+    // 当前集合中，符合切割条件，如果是负数，相当于倒数
+    // $('p').css('fontSize','20px').slice(-6,-2).css('color','red');
+
+    //is()    返回的是布尔值
+    var bool = $('p:first').is('p');
+    // alert(bool);
+
+    //map()  类似
+    $('button').click(function(){
+        var obj = $('input:checked').map(function(){
+            return $(this).val();
+        }).get().join(',');
+        // console.dir(obj);
+        console.log(obj);
+    });
+
+    //hasClass()
+    var bool = $('p').eq(2).hasClass('blue');
+    alert(bool);
+
+    // $('p').css('color','red');
+</script>
+
+</html>

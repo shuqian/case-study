@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #die{
+            width:300px;
+            height:300px;
+            background:pink;
+        }
+        #son{
+            width:100px;
+            height:100px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <div id="die">
+        <div id="son"></div>
+    </div>
+</body>
+    <script>
+        //事件冒泡
+        var die = document.getElementById('die');
+        var son = document.getElementById('son');
+
+        die.onclick = function()
+        {
+            alert('点击了大得');
+        }
+
+        son.onclick = function(e)
+        {
+            var e = e || event;
+            alert('点击了小的');
+            //FF chrom
+            // e.stopPropagation();
+            // 都可以阻止事件冒泡
+            e.cancelBubble = 'true';
+        }
+    </script>
+</html>

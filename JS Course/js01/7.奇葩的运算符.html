@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js严格区分大小写
+
+        //运算符
+        // +   运算   连接符
+        // 如果两边都是数字的话，那么是运算
+        var num = 10 + 10;
+        // alert(num);
+
+        //如果有一边是字符串，那么就是拼接
+        // var str = 'hello' + ' world';
+        var str = 'hello' + 10;
+        // alert(str);
+
+        //+=
+         var num = 5;
+         num = num += 'hello';   //num = num + 'hello'
+         // alert(num);
+
+        document.write(10 + 10 +10);        //30
+        document.write('<br>');
+        document.write('10' + 10 +10);      //101010
+        document.write('<br>');
+        document.write(10 + '10' +10);      //101010
+        document.write('<br>');
+        document.write(10 + 10 +'10');      //2010
+        document.write('<br>');
+
+        // . 的   对象属性访问
+        var obj = {name:'jack',age:18}
+        // alert(obj.name);
+        // alert(obj['name']);
+
+        //. 跟[] 的区别    .不解析变量   []解析变量
+        var str = 'name';
+        // alert(obj.str);
+        // alert(obj[str]);
+
+        //奇葩的分号  ;    命令执行符
+        //在js代码中，换行也是命令执行符
+        document.write('我爱你')
+        document.write('我爱你')
+
+        //不要让我看见这样的代码
+        //换行产生错误的时候，不再是命令执行符
+        var num
+        =
+        10
+        alert(num);
+
+    </script>
+</body>
+</html>

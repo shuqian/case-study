@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       /* p{font-size:20px;}
+        #red{color:red;}
+        .blue{color:blue;}*/
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <p></p>
+</body>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <script>
+       /*
+            write less,do more
+            1.隐式迭代（自动循环）
+            2.完美的链式操作（连贯操作）
+            3.完美的错误处理（不报错）
+                找的到这个对象就进行操作，如果找不到就算了（为了保证其他代码正常运行）
+
+
+        */
+
+       //元素
+       $('p').html('嘿，狗蛋！');
+
+       //DOM对象
+       var box = document.getElementById('box');
+       // box.html();
+       $(box).html('我爱你');
+
+       //创建元素
+       // $('<div></div>');
+
+       //得到一个jQuery对象 (相当于一个加工工厂，不管进来的是什么，都是一个jQuery对象)
+       $();
+
+    </script>
+</html>

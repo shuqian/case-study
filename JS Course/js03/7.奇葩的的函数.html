@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">求虐</button>
+</body>
+    <script>
+        /*
+            函数：
+            回调函数    把一个函数当成参数来传递的时候
+            匿名函数    没有名字的函数
+            递归函数    自己调用自己
+
+         */
+
+         //以后的使用就是这样去使用
+         //function test(){}
+
+        /*
+        //回调函数+匿名函数
+        setInterval(function(){},100);
+
+        //递归函数
+        var res= prompt('请输入用户名','SB250');
+        // alert(res);
+        function login()
+        {
+            var res= prompt('请输入用户名','SB250');
+            if(res == '我是大傻B') {
+                alert('欢迎你，大傻B');
+            } else {
+                login();
+            }
+        }
+        // login();
+        */
+
+        /*
+        //自调函数    定义好函数之后自己调用自己一次
+
+        // var func = function(){};
+        // func();
+
+        (function(){
+            alert(2);
+        })();
+
+        //类似我们的命名空间  解决js里面的命名问题
+        (function(){
+            var num = 10;
+            alert(1);
+        })();
+        */
+
+        /*
+        //返回函数的函数
+        function test()
+        {
+            // return 'I Love You';
+            return function()
+            {
+                alert('我是返回的')
+            }
+        }
+        var res = test();
+        // alert(typeof res);
+        res();
+        */
+
+        //子函数
+        function test()
+        {
+            alert(1);
+
+            function son()
+            {
+                alert(2);
+            }
+            son();
+        }
+        // test();
+
+        //自己改变自己的函数
+        function test()
+        {
+            alert(1);
+            test = function()
+            {
+                alert(2);
+            }
+        }
+        // test();
+        // test();
+        // test();
+
+        //自宫函数    一次性的任务
+        function test()
+        {
+            alert('赞');
+            test = function(){}
+        }
+        test();
+        test();
+
+    </script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span{position:absolute; top:-100px;}
+    </style>
+</head>
+<body>
+
+</body>
+    <script>
+        var str = '左三圈，右三圈，脖子扭扭，屁股扭扭';
+
+        //循环输出str的值
+        for (i=0; i<str.length; i++) {
+            document.write('<span id="snake'+ i + '" >');
+            document.write(str[i]);
+            document.write('</span>');
+        }
+
+        //写一个函数处理字符串
+        function move(x,y,i)
+        {
+            var span = document.getElementById('snake' + i);
+            span.style.left = x + 20*i + 20 + 'px';
+            span.style.top = y + 'px';
+        }
+        // move(100,100,6);
+
+        window.onmousemove = function(e)
+        {
+            document.title = 'X:' + e.clientX + 'Y:' +e.clientY;
+            /*
+            //循环输出所有文字
+            for (i=0; i<str.length; i++) {
+
+            }*/
+            var i = 0;
+            timmer = setInterval(function(){
+                if (i >= str.length-1) clearInterval(timmer);
+                move(e.clientX,e.clientY,i);
+                i++;
+            },50);
+        }
+
+
+
+    </script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+
+</head>
+<body>
+    <p>我是打酱油的</p>
+    <p id="test">我是卖酱油的</p>
+    <p>我是喝酱油的</p>
+
+    <ul>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+    </ul>
+    <ul>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+        <li>###############</li>
+    </ul>
+
+
+
+
+
+
+    <div>
+        <p>
+            <b>
+                <i id="tuo"></i>
+            </b>
+        </p>
+    </div>
+</body>
+    <script>
+        /**************************1.创建节点******************************/
+        // $('<div></div>');
+        // $('<div></div>').html('我是js动态创建的').appendTo('body');
+
+        var strong = $('<strong>我是js动态创建的加粗</strong>');
+        /**************************2.内部插入(添加节点)********************/
+        //添加到后面的
+        // strong.appendTo('body');
+        // $('body').append(strong);
+        //添加到前面的
+        // strong.prependTo('body');
+        // $('body').prepend(strong);
+
+        /**************************3.外部插入(添加兄弟节点)***************/
+        //添加大哥
+        // $('#test').before(strong);
+        // strong.insertBefore('#test');
+
+        //添加小弟
+        // $('#test').after(strong);
+        // strong.insertAfter('#test');
+
+        /**************************4.包裹******************************/
+        //穿衣服
+        // $('#test').wrap('<div></div>');
+        // $('ul li').wrap('<div></div>');
+        // 避免这个悲剧的发生
+        // $('ul li').wrapAll('<div></div>');
+
+        //穿内衣
+        // $('p').wrapInner('<div></div>');
+
+        /**************************5.替换.******************************/
+        // $('p').replaceWith('<div></div>');
+        // $('<div></div>').replaceAll('p');
+
+
+        /**************************6.删除.******************************/
+        // $('#test').remove();
+        // $('#test').detach();
+
+        $('#test').click(function(){
+            alert(1);
+        })
+        //重新投胎
+        // $('#test').remove().appendTo('body');
+        // 死而复生
+        // $('#test').detach().appendTo('body');
+
+        // $('body').empty();
+
+
+        //脱衣服  每次拖一件   只能脱到body
+        // $('#tuo').unwrap('b').unwrap('p').unwrap('div');
+
+        /**************************7.克隆.******************************/
+        $('#test').clone().appendTo('body');
+        //递归克隆加true
+        $('#test').clone(true).appendTo('body');
+
+    </script>
+</html>

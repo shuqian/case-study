@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span></span>
+        <b></b>
+    </div>
+    <p><input type="checkbox">I Love You 0</p>
+    <p><input type="checkbox">I Love You 1</p>
+    <p><input type="checkbox">I Love You 2</p>
+    <p><input type="checkbox">I Love You 3</p>
+    <p><input type="checkbox">I Love You 4</p>
+    <p><input type="checkbox">I Love You 5</p>
+    <p><input type="checkbox">I Love You 6</p>
+    <p><input type="checkbox">I Love You 7</p>
+    <p><input type="checkbox">I Love You 8</p>
+    <p><input type="checkbox">I Love You 9</p>
+
+    <button onclick="select(true)">全选</button>
+    <button onclick="select(false)">全不选</button>
+    <button onclick="fanxuan();">反选</button>
+    <button onclick="del();">删除</button>
+
+
+</body>
+<script>
+    //javascript特效本质
+    //找对象  改属性
+    //Id:   docuemnt.getElementById();    就是一个对象
+    //标签名   document.getElementsByTagName('tr')    数组
+
+    var inputs = document.getElementsByTagName('input');
+    // console.dir(inputs);
+    function select(mark)
+    {
+       for(i=0; i<inputs.length; i++) {
+            inputs[i].checked = mark;
+       }
+    }
+
+    function fanxuan()
+    {
+        for(i=0; i<inputs.length; i++) {
+            inputs[i].checked = !inputs[i].checked;
+       }
+    }
+
+
+    //删除选中的所有元素
+    //js中删除一个数组其中一条信息，那么剩下的会重新排列
+    function del()
+    {
+        for(i=inputs.length-1; i>=0; i--) {
+            if(inputs[i].checked) {
+                var p = inputs[i].parentNode;
+                p.parentNode.removeChild(p);
+            }
+       }
+    }
+
+
+</script>
+
+</html>

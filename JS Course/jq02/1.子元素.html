@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>##############</li>
+        <li>##############</li>
+        <li>##############</li>
+        <li>##############</li>
+        <li>##############</li>
+        <li>##############</li>
+        <li>##############</li>
+    </ul>
+    <ul>
+        <li>@@@@@@@@@@@@@@</li>
+    </ul>
+</body>
+    <script>
+        /*
+            1.DOM对象跟JQ对象最大的区别？
+                JQ返回的全都是数组
+
+        */
+        // $("ul li:first-child").css('color','red');
+        // $("ul li:last-child").css('color','red');
+        // $("ul li:nth-child(3)").css('color','red');
+        // 独生子女
+        $("ul li:only-child").css('color','red');
+
+
+    </script>
+</html>

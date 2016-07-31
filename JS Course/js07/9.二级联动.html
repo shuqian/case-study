@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select id="" onchange="change(this);">
+        <option value="">--请选择--</option>
+        <option value="0">广东省</option>
+        <option value="1">福建省</option>
+        <option value="2">江西省</option>
+        <option value="3">广西省</option>
+    </select>
+    <select name="" id="city">
+        <option value="">--请选择--</option>
+    </select>
+</body>
+    <script>
+
+        //定义数组
+        var list = [];
+        list[0] = ['广州','珠海','深圳','东莞','佛山','清远'];
+        list[1] = ['福州','厦门','泉州','水田','漳州'];
+        list[2] = ['赣州','南昌','九江','景德镇'];
+        list[3] = ['桂林','南宁','钦州','北海','梧州','玉林'];
+        // console.dir(list);
+
+        function change(obj)
+        {
+            //城市的
+            var city = document.getElementById('city');
+            //将省的地址遍历
+            var dizhi = list[obj.value];
+            city.length = 1;
+            // console.dir(dizhi);
+            for(i=0; i<dizhi.length; i++) {
+                //创建一个option
+
+                var option = document.createElement('option');
+                //将地址添加到option中去
+                option.innerHTML = dizhi[i];
+
+                //将option添加到city
+                city.appendChild(option);
+            }
+        }
+    </script>
+</html>

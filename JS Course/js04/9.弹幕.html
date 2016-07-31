@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{width:400px; background:pink; position:absolute;}
+    </style>
+</head>
+<body>
+    <!-- 优先级 -->
+    <button onclick="start();">开始</button>
+    <div id="box" style="left:0px;height:20px"></div>
+</body>
+<script>
+    //1.找对象
+    var box = document.getElementById('box');
+
+    //这里只能获取到写在标签内的属性
+    //alert(box.style.left);
+
+    function start()
+    {
+        var num = 40;
+        setInterval(function(){
+            num += (350-parseInt(box.style.height))/10;
+            num = Math.ceil(num);
+            num *= 0.85;
+            document.title = num;
+            box.style.height = parseInt(box.style.height) + num + 'px';
+        },100);
+    }
+
+</script>
+</html>

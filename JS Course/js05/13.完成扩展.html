@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <textarea id="" cols="30" rows="10" onkeyup="check(this)">aaaa</textarea>
+    <span>还可以输入<font id="myfont" color="red">40</font>个字</span>
+</body>
+    <script>
+        var myfont = document.getElementById('myfont');
+
+        function check(obj)
+        {
+            // alert(obj.innerHTML);
+            // alert(obj.value)
+            var msg = obj.value;
+
+            num = 40;
+            myfont.innerHTML = num-msg.length;
+        }
+    </script>
+</html>

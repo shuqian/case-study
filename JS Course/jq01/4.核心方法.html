@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <!-- <script src="./jquery.js"></script> -->
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p id="test"></p>
+    <p></p>
+    <p></p>
+</body>
+    <script>
+        //隐式迭代
+        $('p').html('I Love You');
+
+        //手动循环
+        $('p').each(function(){
+            //以后使用的最多的对象转换
+            $(this).html('手动循环');
+        })
+
+        //index   是标签的下标
+        // alert($('#test').index());
+
+        //data    数据缓存    临时的数据
+        //info=
+        $('#test').data('title','黑狗蛋');
+        alert($('#test').data('title'));
+
+        //多库共存
+        var j = jQuery.noConflict();
+        j('#test').html('lungege');
+        // $('#test').html('lungege');
+
+
+    </script>
+</html>

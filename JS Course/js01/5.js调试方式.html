@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test();">求虐</button>
+    <script>
+
+        //6.debugger   终断代码，点一步执行一步
+        // debugger;
+
+        //1.alert();   弹出框    终断程序执行
+        // alert(1);
+
+        //2.document.write()  相当于php中的echo  有一个致命东西，代码执行完毕之后，会覆盖掉你整个文件
+        // document.write('我爱你');
+        // document.write('<br>');
+
+
+        function test()
+        {
+            // document.write('我恨你，去死吧！！');
+        }
+        //test();
+
+        //3.console.log()   在控制台日志里面输出   不能解析html标签\r\n
+        console.log(111);
+        console.error('我爱你');
+
+        //4.console.dir()   相当于我们php中print_r  打印数组
+        var list = [1,2,3,4,5];   //定义数组
+        console.dir(list);
+
+        //5.document.title
+        document.title = '我爱你';
+
+        document.onmousemove = function(e)
+        {
+            document.title = 'X:' + e.clientX + 'Y:' + e.clientY;
+            // document.title = e.clientY;
+        }
+
+
+
+
+    </script>
+</body>
+</html>

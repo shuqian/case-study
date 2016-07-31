@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+    <button>测试</button>
+</body>
+    <script>
+        //没有兼容性问题
+        $(document).mousemove(function(e){
+            document.title = 'X:' + e.clientX + 'Y:' + e.clientY;
+            // e.keyCode
+        })
+    </script>
+</html>

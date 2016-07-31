@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <style>
+        #die{width:300px; height:300px; background:red}
+    </style>
+</head>
+
+<body>
+    <div id="die"></div>
+    <button>求虐</button>
+</body>
+    <script>
+        $('#die').hover(function(){
+            alert('进来了');
+        },function(){
+            alert('出去了');
+        })
+
+        //轮询   针对click
+        $('button').toggle(function(){
+            alert('满足你');
+        },function(){
+            alert('再来一次');
+        },function(){
+            alert('收不了了');
+        })
+
+    </script>
+</html>

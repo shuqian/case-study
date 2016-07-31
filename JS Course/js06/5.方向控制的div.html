@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            position:absolute;
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+    <script>
+        var box = document.getElementById('box');
+        var timmer;
+
+        document.onkeydown = function(e)
+        {
+            var e = e || event;
+            // alert(e.keyCode);
+            switch(e.keyCode){
+                case 37:
+                    // alert(x);
+                    x = -5;
+                    y = 0;
+                    break;
+                case 38:
+                    x = 0;
+                    y = -5;
+                    break;
+                case 39:
+                    x = 5;
+                    y = 0;
+                    break;
+                case 40:
+                    x = 0;
+                    y = 5;
+                    break;
+            }
+            /*
+            box.style.left = box.offsetLeft + x + 'px';
+            box.style.top = box.offsetTop + y + 'px';
+            */
+           if (!timmer) {
+               timmer = setInterval(function(){
+                    box.style.left = box.offsetLeft + x + 'px';
+                    box.style.top = box.offsetTop + y + 'px';
+               },30);
+           }
+        }
+
+        document.onkeyup = function()
+        {
+            clearInterval(timmer);
+            timmer = undefined;
+        }
+    </script>
+</html>

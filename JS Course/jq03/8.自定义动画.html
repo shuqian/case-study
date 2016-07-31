@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery-1.8.3.min.js"></script>
+    <script src="./easing.js"></script>
+    <style>
+        #die{width:200px; height:200px; background:red;position:absolute;bor}
+    </style>
+</head>
+
+<body>
+    <button>开始</button>
+    <div id="die"></div>
+</body>
+    <script>
+        $('button').click(function(){
+            $('#die').animate({
+                'width':'100px',
+                'height':'100px',
+                'border-radius':'50px',
+                'left':'200px',
+                'top':'200px'
+            },3000,function(){
+                alert('动画完成了');
+            })
+        })
+    </script>
+</html>

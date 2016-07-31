@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>#box{width:200px; height:200px; background:pink;}</style>
+
+</head>
+<body>
+    <div id="box" title="" style=""></div>
+    <script>
+        //js代码执行顺序跟html代码同步
+        // alert(1);
+    </script>
+
+    <!-- <a href="">我爱你</a> -->
+    <script>
+        //找对象 改属性
+        //1.找对象
+        var box = document.getElementById('box');
+        // alert(box);
+        //2.改属性
+        box.title = '我爱你们';
+        box.style.width = '400px'
+        box.style.background = 'orange';
+        // alert(2);
+    </script>
+</body>
+</html>

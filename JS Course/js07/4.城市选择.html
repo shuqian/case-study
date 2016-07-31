@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #city1,#city2{
+            width:100px;
+            height:150px;
+            float:left;
+        }
+        #dd{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <select id="city1" multiple>
+        <option value="" >广州</option>
+        <option value="">北京</option>
+        <option value="">上海</option>
+        <option value="">东莞</option>
+        <option value="">清远</option>
+        <option value="">惠州</option>
+    </select>
+    <div id="dd">
+        <br>
+        <br>
+        <button onclick="move('city1','city2');">>>></button>
+        <br>
+        <br>
+        <button onclick="move('city2','city1');"><<<</button>
+    </div>
+    <select id="city2" multiple>
+
+    </select>
+</body>
+    <script>
+
+        function move(m1,m2)
+        {
+            var m1 = document.getElementById(m1);
+            var m2 = document.getElementById(m2);
+
+            var list = m1.getElementsByTagName('option');
+            //console.dir(list);
+
+            for(i=0; i<list.length; i++) {
+                //判断选中才移动过去
+                if(list[i].selected) {
+                    //将剪切过去的option的selected取消
+                    list[i].selected = false;
+
+                    //利用这个剪切功能
+                    m2.appendChild(list[i]);
+                }
+            }
+        }
+
+    </script>
+</html>

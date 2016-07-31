@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>hello</button>
+    <button>world</button>
+    <button>I Love You</button>
+    <button>我爱你</button>
+</body>
+    <script>
+        //原型链    类似继承
+
+        function Person(name)
+        {
+            this.name = name;
+        }
+
+        var obj = {age:18,say:function(){alert(2)}}
+
+        Person.prototype = obj;
+
+        var p = new Person('jack');
+        alert(p.name);
+        alert(p.age);
+        p.say();
+
+        //
+
+
+
+
+    </script>
+</html>

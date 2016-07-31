@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:110px;
+            height:150px;
+            background:pink;
+            display:none;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><a href="">添加用户</a> </li>
+            <li>添加用户</li>
+            <li>添加用户</li>
+            <li>添加用户</li>
+        </ul>
+    </div>
+</body>
+    <script>
+        /*
+            鼠标的事件属性
+                    e.clientX
+                    e.clientY
+                    button
+            文档事件
+                onload             页面加载完成会触发
+                onunload           关闭浏览器或者标签页的时候
+                onbeforeunload     页面要离开的时候
+
+            图片事件
+                onload             图片加载完成后
+                onerror            图片加载错误时候
+                onabort            图片加载中断
+
+            鼠标事件
+                onclick
+                ondblclick
+
+                onmousemove
+                onmousedown
+                onmouseup
+
+                onmouseover
+                onmouseout
+
+                onmouseleave     移出（在子元素上不会触发）
+                onmouseenter     移入（在子元素上不会触发）
+
+            菜单事件
+                oncontextmenu
+
+
+         */
+        //获取鼠标button编码时，IE不兼容
+        // document.onclick = function(e)
+        document.onmousedown = function(e)
+        {
+            var e = e || event;
+            if (e.button ==2) {
+                // alert('右击');
+            }
+
+        }
+
+        var box = document.getElementById('box');
+
+        document.oncontextmenu = function(e)
+        {
+            var e = e || event;
+            box.style.left = e.clientX + 'px';
+            box.style.top = e.clientY + 'px';
+            box.style.display = 'block';
+
+            //阻止系统默认菜单
+            return false;
+            // alert('即将弹出菜单');
+        }
+
+        document.onclick = function()
+        {
+            box.style.display = 'none';
+        }
+    </script>
+</html>

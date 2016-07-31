@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="test()">求虐</button>
+</body>
+    <script>
+        /*
+           构造器函数
+
+         */
+        //类似构造方法
+        function Person(name,age)
+        {
+            this.name = name;
+            this.age = age;
+
+            this.say = function()
+            {
+                alert(1);
+            }
+        }
+
+        var p = new Person('jack',18);
+        alert(typeof p)
+        alert(p.name);
+        alert(p.age);
+        p.say();
+
+
+
+
+    </script>
+</html>
